@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Sparkles, ShieldCheck, TrendingUp, Layers, DollarSign, CheckCircle2, Clock, Play } from 'lucide-react';
+import { ArrowRight, Sparkles, TrendingUp, Calendar, Clock, Play, FileText, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   const scrollToWaitlist = (e: React.MouseEvent) => {
@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
-      {/* Ambient background lighting */}
+      {/* Background ambient light */}
       <div className="glow-orb-violet top-10 left-1/2 -translate-x-1/2 -z-10 opacity-70 animate-pulse-glow pointer-events-none" />
       <div className="glow-orb-cyan top-40 right-10 -z-10 opacity-40 pointer-events-none" />
 
@@ -37,7 +37,7 @@ export default function Hero() {
             <span className="text-mojo-dim">•</span>
             <span className="text-mojo-violet-light font-medium flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5 text-mojo-cyan" />
-              The Creator OS
+              The Creator Business OS
             </span>
           </div>
         </div>
@@ -45,12 +45,12 @@ export default function Hero() {
         {/* Headline & Subtitle */}
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-            The Operating System for <br className="hidden sm:block" />
-            <span className="text-gradient-brand">Modern Creators</span>
+            From Brand Deal <br className="hidden sm:block" />
+            <span className="text-gradient-brand">to Bottom Line.</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-mojo-muted max-w-2xl mx-auto leading-relaxed mb-8">
-            Run your entire creator business in one system. Manage rate cards, campaign workflows, GST invoicing, and monthly commercial performance — without spreadsheet chaos.
+          <p className="text-base sm:text-xl text-mojo-muted max-w-3xl mx-auto leading-relaxed mb-8">
+            MOJO FLOW is the Creator Business OS that helps creators manage collaborations, track production costs, create invoices, calculate real profit and never lose track of when they&apos;re due to be paid.
           </p>
 
           {/* Action CTAs */}
@@ -64,195 +64,118 @@ export default function Hero() {
             </button>
 
             <button
-              onClick={scrollToSection('showcase')}
+              onClick={scrollToSection('workflow')}
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-heading text-base font-semibold text-mojo-text bg-mojo-surface-elevated/80 hover:bg-mojo-surface-elevated border border-mojo-border hover:border-mojo-border-bright transition-all duration-200 flex items-center justify-center gap-2.5"
             >
               <Play className="w-4 h-4 text-mojo-cyan fill-mojo-cyan/20" />
               <span>See How It Works</span>
             </button>
           </div>
-
-          {/* Key Architectural Value Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto text-xs sm:text-sm text-mojo-muted font-medium pt-4 pb-6 border-y border-mojo-border/40">
-            <div className="flex items-center justify-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-mojo-emerald" />
-              <span>Direct Commercial Deals</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <Layers className="w-4 h-4 text-mojo-violet-light" />
-              <span>Unified Workspace</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <DollarSign className="w-4 h-4 text-mojo-amber" />
-              <span>Razorpay Billing History</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <TrendingUp className="w-4 h-4 text-mojo-cyan" />
-              <span>Business Insights</span>
-            </div>
-          </div>
         </div>
 
-        {/* SaaS Product Dashboard Visual Hero */}
-        <div className="mt-12 relative max-w-5xl mx-auto">
-          {/* Subtle Outer Ambient Glow */}
+        {/* HERO PRODUCT VISUAL — COLLABORATION PROFITABILITY INTERFACE */}
+        <div className="mt-8 relative max-w-4xl mx-auto">
+          {/* Subtle Outer Glow */}
           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-mojo-violet/30 via-mojo-cyan/20 to-mojo-violet/30 opacity-70 blur-xl -z-10" />
 
-          {/* Window Shell */}
+          {/* SaaS Interface Window */}
           <div className="glass-panel rounded-2xl overflow-hidden border border-mojo-border/80 shadow-2xl">
-            {/* Header Browser Bar */}
+            {/* Header Bar */}
             <div className="bg-[#0C0E17] px-4 py-3 border-b border-mojo-border/80 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 <span className="ml-3 text-xs font-mono text-mojo-dim hidden sm:inline-block">
-                  app.mojoflow.in/dashboard
+                  app.mojoflow.in/collaborations/northstar-summer
                 </span>
               </div>
-
-              <div className="flex items-center gap-3">
-                <div className="px-2.5 py-1 rounded-md bg-mojo-surface-elevated text-[11px] font-medium text-mojo-violet-light border border-mojo-border">
-                  PRO CREATOR OS
-                </div>
-                <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-mojo-violet to-mojo-cyan flex items-center justify-center text-[10px] font-bold text-white">
-                  AR
-                </div>
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-mojo-violet/20 text-mojo-violet-light border border-mojo-violet/40">
+                  Active Collaboration Record
+                </span>
               </div>
             </div>
 
-            {/* Dashboard Workspace Mockup Content */}
-            <div className="p-4 sm:p-6 bg-[#0B0D16] space-y-6 text-left">
-              {/* Metric Stat Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-                <div className="bg-mojo-card p-4 rounded-xl border border-mojo-border/80">
-                  <div className="text-xs font-medium text-mojo-dim uppercase tracking-wider mb-1">Monthly Revenue</div>
-                  <div className="text-xl sm:text-2xl font-bold font-heading text-white">₹4,85,000</div>
-                  <div className="text-[11px] text-mojo-emerald font-semibold flex items-center gap-1 mt-1">
-                    <TrendingUp className="w-3 h-3" /> +24% vs last month
+            {/* Main Profitability Economics Interface */}
+            <div className="p-6 sm:p-8 bg-[#0B0D16] space-y-6 text-left">
+              {/* Brand & Campaign Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-mojo-border/60">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 font-extrabold text-white text-lg flex items-center justify-center border border-purple-400/30 shrink-0">
+                    NS
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-mojo-dim">Brand Collaboration</div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">Northstar</h3>
+                    <p className="text-xs text-mojo-muted">Summer Collection • 2 Reels + 3 Stories</p>
                   </div>
                 </div>
 
-                <div className="bg-mojo-card p-4 rounded-xl border border-mojo-border/80">
-                  <div className="text-xs font-medium text-mojo-dim uppercase tracking-wider mb-1">Active Campaigns</div>
-                  <div className="text-xl sm:text-2xl font-bold font-heading text-white">6 Live</div>
-                  <div className="text-[11px] text-mojo-cyan font-medium mt-1">3 Pending Approval</div>
-                </div>
-
-                <div className="bg-mojo-card p-4 rounded-xl border border-mojo-border/80">
-                  <div className="text-xs font-medium text-mojo-dim uppercase tracking-wider mb-1">Commercial Pipeline</div>
-                  <div className="text-xl sm:text-2xl font-bold font-heading text-white">₹8,50,000</div>
-                  <div className="text-[11px] text-mojo-violet-light font-medium mt-1">4 Open Deals</div>
-                </div>
-
-                <div className="bg-mojo-card p-4 rounded-xl border border-mojo-border/80">
-                  <div className="text-xs font-medium text-mojo-dim uppercase tracking-wider mb-1">Cleared Payouts</div>
-                  <div className="text-xl sm:text-2xl font-bold font-heading text-mojo-emerald">₹3,20,000</div>
-                  <div className="text-[11px] text-mojo-dim mt-1">Razorpay Verified</div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Invoice #MF-2026-014 Raised
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-semibold flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" />
+                    Net 60 (Due 14 Nov 2026)
+                  </span>
                 </div>
               </div>
 
-              {/* Main Workspace split */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Active Collaborations List */}
-                <div className="lg:col-span-2 bg-mojo-card p-4 sm:p-5 rounded-xl border border-mojo-border/80 space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-mojo-border/60">
-                    <h3 className="font-heading font-semibold text-sm text-white flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-mojo-violet" />
-                      Active Brand Collaborations
-                    </h3>
-                    <span className="text-xs text-mojo-muted font-mono">Deliverable Pipeline</span>
+              {/* Economic Financial Equation Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* 1. Total Commercial */}
+                <div className="bg-mojo-card p-5 rounded-xl border border-mojo-border/80">
+                  <div className="text-xs font-semibold text-mojo-dim uppercase tracking-wider mb-1">Total Commercial</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold font-heading text-white">₹1,00,000</div>
+                  <div className="text-[11px] text-mojo-muted mt-1">Agreed Brand Contract Value</div>
+                </div>
+
+                {/* 2. Production Cost */}
+                <div className="bg-mojo-card p-5 rounded-xl border border-mojo-border/80">
+                  <div className="text-xs font-semibold text-rose-400 uppercase tracking-wider mb-1">Production Expenses</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold font-heading text-rose-400">− ₹35,000</div>
+                  <div className="text-[11px] text-mojo-dim mt-1">6 Campaign Expense Items</div>
+                </div>
+
+                {/* 3. VISUALLY DOMINANT CREATOR PROFIT */}
+                <div className="bg-gradient-to-br from-emerald-950/40 via-mojo-card to-emerald-900/20 p-5 rounded-xl border-2 border-emerald-500/60 shadow-glow-card relative overflow-hidden">
+                  <div className="absolute top-0 right-0 px-3 py-0.5 bg-emerald-500 text-black text-[9px] font-extrabold uppercase tracking-wider rounded-bl-md">
+                    REAL PROFIT
                   </div>
+                  <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <TrendingUp className="w-4 h-4" />
+                    Creator Profit
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400">₹65,000</div>
+                  <div className="text-[11px] text-emerald-300/80 font-medium mt-1">65% Net Profit Margin</div>
+                </div>
+              </div>
 
-                  <div className="space-y-3">
-                    <div className="p-3 rounded-lg bg-mojo-surface border border-mojo-border/60 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-xs border border-indigo-500/30">
-                          NK
-                        </div>
-                        <div>
-                          <div className="text-xs sm:text-sm font-semibold text-white">Nike Tech Campaign — Reels & Story</div>
-                          <div className="text-[11px] text-mojo-dim">Commercial: ₹2,20,000 • Due 22 Aug</div>
-                        </div>
-                      </div>
-                      <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[11px] font-medium flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3" /> Ready to Post
-                      </span>
-                    </div>
-
-                    <div className="p-3 rounded-lg bg-mojo-surface border border-mojo-border/60 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-xs border border-cyan-500/30">
-                          SP
-                        </div>
-                        <div>
-                          <div className="text-xs sm:text-sm font-semibold text-white">Spotify India — Podcast Integration</div>
-                          <div className="text-[11px] text-mojo-dim">Commercial: ₹1,80,000 • Script Review</div>
-                        </div>
-                      </div>
-                      <span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[11px] font-medium flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> In Review
-                      </span>
-                    </div>
-
-                    <div className="p-3 rounded-lg bg-mojo-surface border border-mojo-border/60 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center text-xs border border-purple-500/30">
-                          AS
-                        </div>
-                        <div>
-                          <div className="text-xs sm:text-sm font-semibold text-white">ASUS ROG — Setup Showcase</div>
-                          <div className="text-[11px] text-mojo-dim">Commercial: ₹3,50,000 • Contract Signed</div>
-                        </div>
-                      </div>
-                      <span className="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30 text-[11px] font-medium">
-                        Production
-                      </span>
-                    </div>
+              {/* Payment Due Date Intelligence Bar */}
+              <div className="p-4 rounded-xl bg-mojo-surface border border-mojo-border/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                    <FileText className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white">Payment Terms: Net 60</span>
+                    <span className="text-mojo-dim mx-2">•</span>
+                    <span className="text-mojo-muted">Invoice Date: 15 Sep 2026</span>
                   </div>
                 </div>
 
-                {/* Rate Card Summary */}
-                <div className="bg-mojo-card p-4 sm:p-5 rounded-xl border border-mojo-border/80 flex flex-col justify-between space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between pb-3 border-b border-mojo-border/60 mb-3">
-                      <h3 className="font-heading font-semibold text-sm text-white">Commercial Profile</h3>
-                      <span className="text-[10px] uppercase tracking-wider font-semibold text-mojo-emerald bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
-                        Live Link
-                      </span>
-                    </div>
-
-                    <div className="space-y-2 text-xs">
-                      <div className="flex justify-between py-1 border-b border-mojo-border/40">
-                        <span className="text-mojo-muted">Instagram Reel (60s)</span>
-                        <span className="font-semibold text-white">₹1,50,000</span>
-                      </div>
-                      <div className="flex justify-between py-1 border-b border-mojo-border/40">
-                        <span className="text-mojo-muted">YouTube Dedicated</span>
-                        <span className="font-semibold text-white">₹3,50,000</span>
-                      </div>
-                      <div className="flex justify-between py-1 border-b border-mojo-border/40">
-                        <span className="text-mojo-muted">Story Series (3x)</span>
-                        <span className="font-semibold text-white">₹75,000</span>
-                      </div>
-                      <div className="flex justify-between py-1">
-                        <span className="text-mojo-muted">Brand Ambassadorship</span>
-                        <span className="font-semibold text-mojo-cyan">Custom Package</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-mojo-border/60">
-                    <div className="text-[11px] text-mojo-dim mb-2">Automated GST Invoicing & Razorpay Billing</div>
-                    <div className="w-full py-2 rounded-lg bg-mojo-surface-elevated text-xs font-semibold text-center text-mojo-violet-light border border-mojo-border">
-                      mojoflow.in/c/alex-rivers
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white bg-mojo-surface-elevated px-3 py-1.5 rounded-lg border border-mojo-border">
+                  <Calendar className="w-3.5 h-3.5 text-mojo-cyan" />
+                  Payment Due: <span className="text-mojo-cyan font-bold">14 Nov 2026</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

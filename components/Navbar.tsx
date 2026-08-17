@@ -37,12 +37,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#08090E]/85 backdrop-blur-md border-b border-mojo-border/60 py-3.5 shadow-lg'
+          ? 'bg-[#08090E]/90 backdrop-blur-md border-b border-mojo-border/60 py-3.5 shadow-lg'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand / Logo */}
+        {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-mojo-violet-dark via-mojo-violet to-mojo-cyan flex items-center justify-center shadow-glow-violet group-hover:scale-105 transition-transform duration-200">
             <Zap className="w-5.5 h-5.5 text-white fill-white/20" />
@@ -50,53 +50,42 @@ export default function Navbar() {
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold tracking-tight text-white flex items-center gap-2">
               MOJO FLOW
-              <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] uppercase tracking-wider font-semibold rounded-full bg-mojo-violet/15 text-mojo-violet-light border border-mojo-violet/30">
-                Creator OS
+              <span className="hidden sm:inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold rounded-full bg-mojo-violet/15 text-mojo-violet-light border border-mojo-violet/30">
+                Creator Business OS
               </span>
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-mojo-muted">
-          <a
-            href="#problem"
-            onClick={scrollToSection('problem')}
-            className="hover:text-white transition-colors duration-200"
-          >
-            Problem
-          </a>
-          <a
-            href="#modules"
-            onClick={scrollToSection('modules')}
-            className="hover:text-white transition-colors duration-200"
-          >
-            Modules
-          </a>
-          <a
-            href="#differentiation"
-            onClick={scrollToSection('differentiation')}
-            className="hover:text-white transition-colors duration-200"
-          >
-            Why MOJO FLOW
-          </a>
-          <a
-            href="#showcase"
-            onClick={scrollToSection('showcase')}
-            className="hover:text-white transition-colors duration-200"
-          >
-            Product Showcase
-          </a>
-          <a
-            href="#workflow"
-            onClick={scrollToSection('workflow')}
-            className="hover:text-white transition-colors duration-200"
-          >
+        <nav className="hidden xl:flex items-center gap-7 text-xs font-semibold text-mojo-muted uppercase tracking-wider">
+          <a href="#workflow" onClick={scrollToSection('workflow')} className="hover:text-white transition-colors">
             Workflow
+          </a>
+          <a href="#crm" onClick={scrollToSection('crm')} className="hover:text-white transition-colors">
+            Creator CRM
+          </a>
+          <a href="#commercials" onClick={scrollToSection('commercials')} className="hover:text-white transition-colors">
+            Commercials
+          </a>
+          <a href="#invoicing" onClick={scrollToSection('invoicing')} className="hover:text-white transition-colors">
+            Invoicing
+          </a>
+          <a href="#expenses" onClick={scrollToSection('expenses')} className="hover:text-white transition-colors">
+            Expenses
+          </a>
+          <a href="#profitability" onClick={scrollToSection('profitability')} className="hover:text-white transition-colors text-mojo-emerald">
+            Profitability
+          </a>
+          <a href="#payments" onClick={scrollToSection('payments')} className="hover:text-white transition-colors">
+            Payment Due
+          </a>
+          <a href="#why-mojo" onClick={scrollToSection('why-mojo')} className="hover:text-white transition-colors">
+            Why MOJO FLOW
           </a>
         </nav>
 
-        {/* CTA Button */}
+        {/* Action Button */}
         <div className="hidden sm:flex items-center gap-4">
           <button
             onClick={scrollToWaitlist}
@@ -108,7 +97,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex xl:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 rounded-lg text-mojo-muted hover:text-white hover:bg-mojo-surface border border-transparent hover:border-mojo-border transition-all"
@@ -121,42 +110,31 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-mojo-surface/95 backdrop-blur-xl border-b border-mojo-border px-4 pt-4 pb-6 space-y-4 shadow-2xl animate-fadeIn">
-          <nav className="flex flex-col space-y-3 font-medium text-mojo-muted text-base">
-            <a
-              href="#problem"
-              onClick={scrollToSection('problem')}
-              className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white transition-colors"
-            >
-              The Problem
+        <div className="xl:hidden bg-mojo-surface/95 backdrop-blur-xl border-b border-mojo-border px-4 pt-4 pb-6 space-y-4 shadow-2xl animate-fadeIn">
+          <nav className="flex flex-col space-y-2 font-medium text-mojo-muted text-sm">
+            <a href="#workflow" onClick={scrollToSection('workflow')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Workflow Story
             </a>
-            <a
-              href="#modules"
-              onClick={scrollToSection('modules')}
-              className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white transition-colors"
-            >
-              Creator OS Modules
+            <a href="#crm" onClick={scrollToSection('crm')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Creator CRM
             </a>
-            <a
-              href="#differentiation"
-              onClick={scrollToSection('differentiation')}
-              className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white transition-colors"
-            >
-              Why MOJO FLOW
+            <a href="#commercials" onClick={scrollToSection('commercials')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Commercial Management
             </a>
-            <a
-              href="#showcase"
-              onClick={scrollToSection('showcase')}
-              className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white transition-colors"
-            >
-              Product Showcase
+            <a href="#invoicing" onClick={scrollToSection('invoicing')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Creator Invoicing
             </a>
-            <a
-              href="#workflow"
-              onClick={scrollToSection('workflow')}
-              className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white transition-colors"
-            >
-              Workflow
+            <a href="#expenses" onClick={scrollToSection('expenses')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Production Expenses
+            </a>
+            <a href="#profitability" onClick={scrollToSection('profitability')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated text-mojo-emerald font-semibold">
+              Real Profitability
+            </a>
+            <a href="#payments" onClick={scrollToSection('payments')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Payment Due Date Intelligence
+            </a>
+            <a href="#why-mojo" onClick={scrollToSection('why-mojo')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
+              Why Not Just Use A CRM?
             </a>
           </nav>
           <div className="pt-2 border-t border-mojo-border">

@@ -8,22 +8,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'MOJO FLOW — The Creator OS',
-  description: 'MOJO FLOW is the operating system for modern creators. Bring your entire creator business — commercials, rate cards, campaigns, invoicing, and analytics — into one unified system.',
+  title: 'MOJO FLOW — The Creator Business OS',
+  description: 'From Brand Deal to Bottom Line. MOJO FLOW is the Creator Business OS that helps creators manage collaborations, track production costs, create invoices, calculate real profit and never lose track of when they are due to be paid.',
   keywords: [
-    'Creator OS',
     'MOJO FLOW',
-    'Creator Business Management',
-    'Rate Cards for Creators',
-    'Creator Invoicing',
-    'Brand Collaboration Management',
-    'Creator Platform',
-    'Creator Commercials'
+    'Creator Business OS',
+    'Creator CRM',
+    'Creator invoicing software',
+    'Creator expense management',
+    'Creator collaboration management',
+    'Creator profitability',
+    'Influencer business management',
+    'Creator business management',
+    'Brand collaboration management',
+    'Payment due date tracking'
   ],
   authors: [{ name: 'MOJO FLOW' }],
   openGraph: {
-    title: 'MOJO FLOW — The Creator OS',
-    description: 'The operating system for modern creators. Unify commercial deals, rate cards, campaign tracking, invoicing, and business insights.',
+    title: 'MOJO FLOW — The Creator Business OS',
+    description: 'From Brand Deal to Bottom Line. Manage collaborations, commercials, invoices, production expenses, profitability and payment due dates.',
     url: 'https://mojoflow.in',
     siteName: 'MOJO FLOW',
     locale: 'en_US',
@@ -31,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MOJO FLOW — The Creator OS',
-    description: 'Stop running your creator business across spreadsheets and DMs. Unify everything with MOJO FLOW.',
+    title: 'MOJO FLOW — The Creator Business OS',
+    description: 'Manage your creator collaborations, production costs, invoices, real profit and payment due dates in one creator-first workspace.',
   },
   robots: {
     index: true,

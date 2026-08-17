@@ -12,7 +12,7 @@ export default function WaitlistForm() {
   const [submitted, setSubmitted] = useState(false);
   const [responseMsg, setResponseMsg] = useState('');
 
-  // UTM attribution state automatically extracted from landing page URL
+  // UTM attribution extracted automatically from page URL
   const [utmParams, setUtmParams] = useState({
     utm_source: '',
     utm_medium: '',
@@ -36,7 +36,7 @@ export default function WaitlistForm() {
 
   const validate = () => {
     if (!name.trim() || name.trim().length < 2) {
-      setError('Please enter your full name (at least 2 characters).');
+      setError('Please enter your name (at least 2 characters).');
       return false;
     }
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -86,7 +86,7 @@ export default function WaitlistForm() {
 
   return (
     <section id="waitlist" className="py-24 bg-grid-pattern relative overflow-hidden">
-      {/* Background ambient lighting */}
+      {/* Glow Orbs */}
       <div className="glow-orb-violet top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -100,12 +100,12 @@ export default function WaitlistForm() {
 
           {/* Headline */}
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-            Your creator business is ready for <br className="hidden sm:block" />
-            <span className="text-gradient-brand">an operating system.</span>
+            Know your revenue. Know your costs. <br className="hidden sm:block" />
+            <span className="text-gradient-brand">Know your profit.</span>
           </h2>
 
           <p className="text-base sm:text-lg text-mojo-muted max-w-xl mx-auto mb-10 leading-relaxed">
-            Stop managing your commercial engine across spreadsheets and DMs. Join the waitlist for priority onboarding when early access opens.
+            MOJO FLOW is coming soon. Be among the first creators to get access.
           </p>
 
           {/* Success State View */}
@@ -126,7 +126,7 @@ export default function WaitlistForm() {
               </div>
             </div>
           ) : (
-            /* Waitlist Form View */
+            /* Form View */
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 text-left">
               {/* Invisible Honeypot Field */}
               <div className="hidden" aria-hidden="true">
@@ -186,7 +186,7 @@ export default function WaitlistForm() {
                 </div>
               )}
 
-              {/* Primary Action CTA */}
+              {/* Primary CTA */}
               <button
                 type="submit"
                 disabled={loading}
@@ -207,7 +207,7 @@ export default function WaitlistForm() {
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-mojo-dim pt-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-mojo-emerald" />
-                <span>No credit card required. Private data protection.</span>
+                <span>Zero spam. Private data protection.</span>
               </div>
             </form>
           )}
