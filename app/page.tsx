@@ -1,15 +1,13 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Problem from '@/components/Problem';
-import FlagshipStory from '@/components/FlagshipStory';
+import InteractiveCollaboration from '@/components/InteractiveCollaboration';
 import CreatorCRM from '@/components/CreatorCRM';
-import CommercialManagement from '@/components/CommercialManagement';
-import Invoicing from '@/components/Invoicing';
-import ExpenseManagement from '@/components/ExpenseManagement';
-import Profitability from '@/components/Profitability';
+import FinancialWorkspace from '@/components/FinancialWorkspace';
 import PaymentIntelligence from '@/components/PaymentIntelligence';
 import CRMComparison from '@/components/CRMComparison';
 import ProductPhilosophy from '@/components/ProductPhilosophy';
+import FAQ from '@/components/FAQ';
 import WaitlistForm from '@/components/WaitlistForm';
 import Footer from '@/components/Footer';
 
@@ -19,40 +17,34 @@ export default function Home() {
       {/* Sticky Navigation */}
       <Navbar />
 
-      {/* 1. HERO — From Brand Deal to Bottom Line */}
+      {/* 1. HERO — From Brand Deal to Bottom Line. */}
       <Hero />
 
-      {/* 2. PROBLEM — Your brand deal isn't your profit */}
+      {/* 2. PROBLEM — Your brand deal isn't your profit. */}
       <Problem />
 
-      {/* 3. FLAGSHIP PRODUCT STORY — One collaboration. The entire business, tracked. */}
-      <FlagshipStory />
+      {/* 3. INTERACTIVE COLLABORATION — One collaboration. Everything connected. */}
+      <InteractiveCollaboration />
 
-      {/* 4. CREATOR CRM — A CRM that understands creators */}
+      {/* 4. CREATOR CRM — A CRM built around the way creators actually work. */}
       <CreatorCRM />
 
-      {/* 5. COMMERCIAL MANAGEMENT — Your rates. Your packages. Your business. */}
-      <CommercialManagement />
+      {/* 5. FINANCIAL WORKSPACE — See the money behind every collaboration. */}
+      <FinancialWorkspace />
 
-      {/* 6. INVOICING — Invoice every collaboration without leaving your workflow */}
-      <Invoicing />
-
-      {/* 7. EXPENSE MANAGEMENT — Know what it costs to create */}
-      <ExpenseManagement />
-
-      {/* 8. PROFITABILITY — Revenue is not profit */}
-      <Profitability />
-
-      {/* 9. PAYMENT DUE-DATE INTELLIGENCE — Stop guessing when you're getting paid */}
+      {/* 6. PAYMENT INTELLIGENCE — Know exactly when you're due to be paid. */}
       <PaymentIntelligence />
 
-      {/* 10. GENERIC CRM COMPARISON — Why not just use a CRM? */}
+      {/* 7. CREATOR-SIDE CRM VS GENERIC CRM */}
       <CRMComparison />
 
-      {/* 11. PRODUCT PHILOSOPHY — Built for the business behind your influence */}
+      {/* 8. WHY MOJO FLOW */}
       <ProductPhilosophy />
 
-      {/* 12. WAITLIST CTA — Know your revenue. Know your costs. Know your profit */}
+      {/* 9. FAQ */}
+      <FAQ />
+
+      {/* 10. WAITLIST CTA */}
       <WaitlistForm />
 
       {/* Footer */}

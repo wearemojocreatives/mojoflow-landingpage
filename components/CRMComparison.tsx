@@ -1,86 +1,84 @@
 'use client';
 
-import { Zap, Users, Check, Minus } from 'lucide-react';
+import { Users, Zap, Check, ArrowRight } from 'lucide-react';
 
 export default function CRMComparison() {
-  const comparisonRows = [
-    { generic: 'Contacts', mojo: 'Brands & Brand Contacts' },
-    { generic: 'Sales Pipeline', mojo: 'Collaboration Pipeline' },
-    { generic: 'Deals', mojo: 'Brand Collaborations' },
-    { generic: 'Activities', mojo: 'Campaign Deliverables' },
-    { generic: 'Deal Value', mojo: 'Commercial Value' },
-    { generic: 'Generic Expenses', mojo: 'Production Expenses' },
-    { generic: 'Generic Invoices', mojo: 'Creator Invoices' },
-    { generic: 'Revenue', mojo: 'Commercial Revenue' },
-    { generic: '—', mojo: 'Creator Profit', highlight: true },
-    { generic: '—', mojo: 'Payment Due Tracking', highlight: true },
-    { generic: '—', mojo: 'Net 30 / 45 / 60 / 90', highlight: true },
-    { generic: '—', mojo: 'Collaboration Profitability', highlight: true },
-  ];
+  const traditionalPipeline = ['Lead', 'Contact', 'Opportunity', 'Deal', 'Won'];
+  const mojoPipeline = ['Brand', 'Collaboration', 'Commercial', 'Production', 'Expenses', 'Invoice', 'Payment', 'Profit'];
 
   return (
-    <section id="why-mojo" className="py-24 bg-[#0A0C14] border-t border-mojo-border/60 relative overflow-hidden">
+    <section className="py-24 bg-[#0A0C14] border-t border-mojo-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mojo-cyan/10 border border-mojo-cyan/20 text-mojo-cyan text-xs font-semibold uppercase tracking-wider mb-4">
             <Users className="w-3.5 h-3.5" />
-            Category Perspective
+            Category Differentiation
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
-            Why not just use a CRM?
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4 font-heading">
+            Creator-side CRM <br />
+            <span className="text-gradient-brand">vs Generic CRM.</span>
           </h2>
-          <p className="text-base sm:text-lg text-mojo-muted leading-relaxed">
-            You can. But generic CRMs weren&apos;t designed around the economics of a creator collaboration.
+          <p className="text-sm sm:text-base text-mojo-muted leading-relaxed">
+            CRMs such as Zoho CRM, Bigin, HubSpot, and Pipedrive are built to manage corporate sales funnels. MOJO FLOW is a creator-side CRM specifically built around brand deals, production costs, and creator profit.
           </p>
         </div>
 
-        {/* Category Context Copy */}
-        <div className="max-w-3xl mx-auto mb-12 p-5 rounded-2xl bg-mojo-surface border border-mojo-border text-center text-xs sm:text-sm text-mojo-muted leading-relaxed">
-          Platforms such as <span className="text-white font-semibold">Zoho CRM</span> and <span className="text-white font-semibold">Bigin</span> are powerful CRM systems built for managing customers, sales pipelines and business relationships. MOJO FLOW applies that operational thinking specifically to the creator business.
-        </div>
-
-        {/* Comparison Table */}
-        <div className="max-w-4xl mx-auto glass-panel rounded-2xl border border-mojo-border overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-12 bg-[#0E101D] p-4 sm:p-5 border-b border-mojo-border font-heading text-xs sm:text-sm font-bold">
-            <div className="col-span-5 text-mojo-dim flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-mojo-dim" />
-              <span>Generic CRM</span>
-            </div>
-            <div className="col-span-7 text-mojo-violet-light flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-mojo-violet fill-mojo-violet/20" />
-              <span>MOJO FLOW Creator Business OS</span>
-            </div>
-          </div>
-
-          <div className="divide-y divide-mojo-border/60">
-            {comparisonRows.map((row, idx) => (
-              <div
-                key={idx}
-                className={`grid grid-cols-12 p-3.5 sm:p-4 text-xs sm:text-sm items-center transition-colors ${
-                  row.highlight ? 'bg-emerald-950/20' : 'hover:bg-mojo-surface-elevated/40'
-                }`}
-              >
-                <div className="col-span-5 text-mojo-dim flex items-center gap-2">
-                  {row.generic === '—' ? (
-                    <Minus className="w-3.5 h-3.5 text-mojo-dim/50" />
-                  ) : (
-                    <span className="text-mojo-muted font-medium">{row.generic}</span>
+        {/* Visual Pipeline Comparison */}
+        <div className="max-w-4xl mx-auto space-y-6">
+          
+          {/* Traditional CRM Box */}
+          <div className="p-6 rounded-2xl bg-mojo-card border border-mojo-border text-left space-y-3">
+            <div className="text-xs font-bold text-mojo-dim uppercase tracking-wider">Traditional Corporate CRM Pipeline</div>
+            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-mojo-muted">
+              {traditionalPipeline.map((step, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-lg bg-mojo-surface border border-mojo-border text-mojo-dim">
+                    {step}
+                  </span>
+                  {idx < traditionalPipeline.length - 1 && (
+                    <ArrowRight className="w-3.5 h-3.5 text-mojo-dim/40" />
                   )}
                 </div>
-
-                <div className="col-span-7 font-semibold flex items-center gap-2">
-                  <div className={`p-0.5 rounded ${row.highlight ? 'bg-emerald-500/20 text-emerald-400' : 'bg-mojo-violet/20 text-mojo-violet-light'}`}>
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <span className={row.highlight ? 'text-emerald-400 font-bold' : 'text-white'}>
-                    {row.mojo}
-                  </span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* MOJO FLOW Creator CRM Box */}
+          <div className="p-6 sm:p-8 rounded-3xl glass-panel border-2 border-mojo-violet/50 shadow-glow-card text-left space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="text-xs font-extrabold text-mojo-cyan uppercase tracking-wider flex items-center gap-2">
+                <Zap className="w-4 h-4 text-mojo-cyan fill-mojo-cyan/20" />
+                MOJO FLOW Creator Business Pipeline
+              </div>
+              <span className="text-xs text-mojo-emerald font-bold">Purpose-Built for Creators</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-white">
+              {mojoPipeline.map((step, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <span className={`px-3 py-1.5 rounded-lg border ${
+                    step === 'Profit'
+                      ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40 font-extrabold'
+                      : 'bg-mojo-surface-elevated text-mojo-text border-mojo-border'
+                  }`}>
+                    {step}
+                  </span>
+                  {idx < mojoPipeline.length - 1 && (
+                    <ArrowRight className="w-3.5 h-3.5 text-mojo-dim" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center pt-2">
+            <p className="text-xs sm:text-sm font-heading font-semibold text-mojo-violet-light">
+              CRM built for the business behind creator partnerships.
+            </p>
+          </div>
+
         </div>
 
       </div>

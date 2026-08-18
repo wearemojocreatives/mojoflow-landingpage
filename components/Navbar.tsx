@@ -15,19 +15,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToWaitlist = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    const element = document.getElementById('waitlist');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const navLinks = [
+    { name: 'Product', href: '#product' },
+    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Creator CRM', href: '#crm' },
+    { name: 'Why MOJO FLOW', href: '#why-mojo' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
-  const scrollToSection = (id: string) => (e: React.MouseEvent) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -37,115 +37,91 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#08090E]/90 backdrop-blur-md border-b border-mojo-border/60 py-3.5 shadow-lg'
+          ? 'bg-mojo-bg/85 backdrop-blur-md border-b border-mojo-border/80 py-3 shadow-lg'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-mojo-violet-dark via-mojo-violet to-mojo-cyan flex items-center justify-center shadow-glow-violet group-hover:scale-105 transition-transform duration-200">
-            <Zap className="w-5.5 h-5.5 text-white fill-white/20" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-heading text-lg font-bold tracking-tight text-white flex items-center gap-2">
-              MOJO FLOW
-              <span className="hidden sm:inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold rounded-full bg-mojo-violet/15 text-mojo-violet-light border border-mojo-violet/30">
-                Creator Business OS
-              </span>
-            </span>
-          </div>
-        </a>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-7 text-xs font-semibold text-mojo-muted uppercase tracking-wider">
-          <a href="#workflow" onClick={scrollToSection('workflow')} className="hover:text-white transition-colors">
-            Workflow
-          </a>
-          <a href="#crm" onClick={scrollToSection('crm')} className="hover:text-white transition-colors">
-            Creator CRM
-          </a>
-          <a href="#commercials" onClick={scrollToSection('commercials')} className="hover:text-white transition-colors">
-            Commercials
-          </a>
-          <a href="#invoicing" onClick={scrollToSection('invoicing')} className="hover:text-white transition-colors">
-            Invoicing
-          </a>
-          <a href="#expenses" onClick={scrollToSection('expenses')} className="hover:text-white transition-colors">
-            Expenses
-          </a>
-          <a href="#profitability" onClick={scrollToSection('profitability')} className="hover:text-white transition-colors text-mojo-emerald">
-            Profitability
-          </a>
-          <a href="#payments" onClick={scrollToSection('payments')} className="hover:text-white transition-colors">
-            Payment Due
-          </a>
-          <a href="#why-mojo" onClick={scrollToSection('why-mojo')} className="hover:text-white transition-colors">
-            Why MOJO FLOW
-          </a>
-        </nav>
-
-        {/* Action Button */}
-        <div className="hidden sm:flex items-center gap-4">
-          <button
-            onClick={scrollToWaitlist}
-            className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-heading text-sm font-semibold text-white bg-gradient-to-r from-mojo-violet to-mojo-violet-dark hover:from-mojo-violet-light hover:to-mojo-violet shadow-glow-violet hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          
+          {/* Brand Logo */}
+          <a
+            href="#"
+            className="flex items-center gap-2.5 group cursor-pointer"
           >
-            <span>Get on the Waitlist</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-mojo-violet via-mojo-violet-dark to-mojo-cyan flex items-center justify-center shadow-glow-violet group-hover:scale-105 transition-transform duration-300">
+              <Zap className="w-5 h-5 text-white fill-white/20" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-xl font-extrabold tracking-tight text-white group-hover:text-mojo-violet-light transition-colors">
+                MOJO FLOW
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-mojo-cyan -mt-1">
+                Creator CRM
+              </span>
+            </div>
+          </a>
 
-        {/* Mobile menu trigger */}
-        <div className="flex xl:hidden items-center gap-2">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-xs font-semibold uppercase tracking-wider text-mojo-muted hover:text-white transition-colors py-1"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center">
+            <a
+              href="#waitlist"
+              onClick={(e) => scrollToSection(e, '#waitlist')}
+              className="px-5 py-2.5 rounded-xl font-heading text-xs font-bold text-white bg-gradient-to-r from-mojo-violet to-mojo-cyan hover:from-mojo-violet-light hover:to-mojo-cyan shadow-glow-violet hover:shadow-xl transition-all duration-300 flex items-center gap-1.5 group"
+            >
+              <span>Get on the Waitlist</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+
+          {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-lg text-mojo-muted hover:text-white hover:bg-mojo-surface border border-transparent hover:border-mojo-border transition-all"
+            className="md:hidden p-2 rounded-xl bg-mojo-surface border border-mojo-border text-mojo-text hover:text-white focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Animated Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-mojo-surface/95 backdrop-blur-xl border-b border-mojo-border px-4 pt-4 pb-6 space-y-4 shadow-2xl animate-fadeIn">
-          <nav className="flex flex-col space-y-2 font-medium text-mojo-muted text-sm">
-            <a href="#workflow" onClick={scrollToSection('workflow')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Workflow Story
-            </a>
-            <a href="#crm" onClick={scrollToSection('crm')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Creator CRM
-            </a>
-            <a href="#commercials" onClick={scrollToSection('commercials')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Commercial Management
-            </a>
-            <a href="#invoicing" onClick={scrollToSection('invoicing')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Creator Invoicing
-            </a>
-            <a href="#expenses" onClick={scrollToSection('expenses')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Production Expenses
-            </a>
-            <a href="#profitability" onClick={scrollToSection('profitability')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated text-mojo-emerald font-semibold">
-              Real Profitability
-            </a>
-            <a href="#payments" onClick={scrollToSection('payments')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Payment Due Date Intelligence
-            </a>
-            <a href="#why-mojo" onClick={scrollToSection('why-mojo')} className="px-3 py-2 rounded-lg hover:bg-mojo-surface-elevated hover:text-white">
-              Why Not Just Use A CRM?
+        <div className="md:hidden fixed inset-x-0 top-[65px] bg-[#0A0C14]/95 backdrop-blur-xl border-b border-mojo-border shadow-2xl p-6 animate-fadeIn transition-all">
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-sm font-bold uppercase tracking-wider text-mojo-muted hover:text-white py-2 border-b border-mojo-border/40"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="#waitlist"
+              onClick={(e) => scrollToSection(e, '#waitlist')}
+              className="mt-2 w-full py-3 rounded-xl font-heading text-sm font-bold text-white bg-gradient-to-r from-mojo-violet to-mojo-cyan text-center shadow-glow-violet"
+            >
+              Get on the Waitlist
             </a>
           </nav>
-          <div className="pt-2 border-t border-mojo-border">
-            <button
-              onClick={scrollToWaitlist}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-heading text-sm font-semibold text-white bg-gradient-to-r from-mojo-violet to-mojo-violet-dark shadow-glow-violet"
-            >
-              <span>Get on the Waitlist</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
         </div>
       )}
     </header>

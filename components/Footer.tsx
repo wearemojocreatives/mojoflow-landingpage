@@ -27,7 +27,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-mojo-muted text-xs sm:text-sm max-w-sm leading-relaxed">
-              MOJO FLOW is the Creator Business OS that helps creators manage collaborations, track production costs, create invoices, calculate real profit and never lose track of when they&apos;re due to be paid.
+              MOJO FLOW is the Creator CRM and Business OS that helps creators manage brand collaborations, track production costs, issue invoices, calculate real profit, and track payment due dates.
             </p>
             <div className="flex items-center gap-2 text-xs text-mojo-dim">
               <Mail className="w-4 h-4 text-mojo-violet-light" />
@@ -37,11 +37,16 @@ export default function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-3">
-            <h4 className="font-heading text-xs font-bold text-white uppercase tracking-wider">Business OS</h4>
+            <h4 className="font-heading text-xs font-bold text-white uppercase tracking-wider">Navigation</h4>
             <ul className="space-y-2 text-xs font-medium">
               <li>
-                <a href="#workflow" onClick={scrollToSection('workflow')} className="hover:text-white transition-colors">
-                  Workflow Story
+                <a href="#product" onClick={scrollToSection('product')} className="hover:text-white transition-colors">
+                  Product
+                </a>
+              </li>
+              <li>
+                <a href="#how-it-works" onClick={scrollToSection('how-it-works')} className="hover:text-white transition-colors">
+                  How It Works
                 </a>
               </li>
               <li>
@@ -50,34 +55,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#commercials" onClick={scrollToSection('commercials')} className="hover:text-white transition-colors">
-                  Commercial Management
+                <a href="#why-mojo" onClick={scrollToSection('why-mojo')} className="hover:text-white transition-colors">
+                  Why MOJO FLOW
                 </a>
               </li>
               <li>
-                <a href="#invoicing" onClick={scrollToSection('invoicing')} className="hover:text-white transition-colors">
-                  Creator Invoicing
-                </a>
-              </li>
-              <li>
-                <a href="#expenses" onClick={scrollToSection('expenses')} className="hover:text-white transition-colors">
-                  Expense Management
-                </a>
-              </li>
-              <li>
-                <a href="#profitability" onClick={scrollToSection('profitability')} className="hover:text-white transition-colors">
-                  Real Profitability
-                </a>
-              </li>
-              <li>
-                <a href="#payments" onClick={scrollToSection('payments')} className="hover:text-white transition-colors">
-                  Payment Due Dates
+                <a href="#faq" onClick={scrollToSection('faq')} className="hover:text-white transition-colors">
+                  FAQ
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Privacy & Technical Info */}
+          {/* Col 3: Privacy & Security */}
           <div className="space-y-3">
             <h4 className="font-heading text-xs font-bold text-white uppercase tracking-wider">Workspace Security</h4>
             <ul className="space-y-2 text-xs font-medium">
@@ -86,7 +76,7 @@ export default function Footer() {
                 100% Private Workspace Data
               </li>
               <li className="text-mojo-dim">Direct Commercial Ownership</li>
-              <li className="text-mojo-dim">Creator-Controlled Rate Cards</li>
+              <li className="text-mojo-dim">No Public Data Exposure</li>
               <li className="text-mojo-dim text-[11px] pt-1">
                 MOJO FLOW subscription billing processed securely via Razorpay.
               </li>
